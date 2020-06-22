@@ -1,0 +1,132 @@
+/* COLORES
+  Negro: #121212
+  Amarillo: #F1EC40
+  Gris 1: #AAAAAA
+  Gris 2: #555555
+*/
+
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: #B2936E; */
+  background-image: linear-gradient(to right, #B2936E,#F4D1B5);
+
+
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+}
+
+header {
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1502773860571-211a597d6e4b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+  /* background-image: url(https://images.unsplash.com/photo-1508186736123-44a5fcb36f9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80); */
+  /* background-image: url(https://images.unsplash.com/photo-1587731556938-38755b4803a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1514&q=80); */
+  background-size: cover;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+
+}
+
+nav {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nav-title {
+  margin: 0px 0px 0px 30px;
+  font-family: 'Audiowide', cursive;
+  color: #F1EC40;
+}
+
+#nav-menu {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu-item {
+  margin: 15px 25px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-menu-item a {
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: #FFF;
+  border-bottom: solid 2px #F1EC4000;
+
+}
+
+.nav-menu-item a:hover {
+  color: #F1EC40;
+  border-bottom: solid 2px #F1EC40;
+}
+
+#header-banner {
+  margin-left: 50px;
+}
+
+#header-banner-title {
+  padding-top: 15%;
+  margin: 0;
+  font-family: 'Audiowide', cursive;
+  font-size: 42px;
+  text-shadow: -3px 5px #000;
+  color: #F1EC40;
+}
+
+#header-banner-text {
+  width: 500px;
+  font-size: 18px;
+  color: #FFF;
+  text-shadow: 0px 0px 25px #000;
+}
+
+main {
+  padding: 0px 5%;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: solid 2px red; */
+}
+
+.section-title {
+  padding: 10px;
+  background-color: #121212;
+  font-family: 'Audiowide', cursive;
+  color: #F1EC40;
+}
+
+.articles {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+img {
+  width: 280px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+article h3 {
+  text-align: center;
+}
