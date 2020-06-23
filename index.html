@@ -9,7 +9,8 @@
 <body>
   <header>
     <nav>
-      <h3 id="nav-title">Rolling Music Shop</h3>
+      <a href="#" id="nav-title">Rolling Music Shop</a>
+      <!-- <h3 id="nav-title">Rolling Music Shop</h3> -->
       <ul id="nav-menu">
         <li class="nav-menu-item"><a href="#cat-discos">Discos</a></li>
         <li class="nav-menu-item"><a href="#cat-guitarras">Guitarras</a></li>
@@ -26,7 +27,7 @@
     <!-- Categoría 1 -->
     <section id="cat-discos">
       <h2 class="section-title">Discos</h2>
-      <div class="articles">
+      <div class="productos">
         <article>
           <img src="https://images.unsplash.com/photo-1536849249744-44e01e7a089d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80" alt="record">
           <h3>Disco 1</h3>
@@ -49,7 +50,7 @@
     <!-- Categoría 2 -->
     <section id="cat-guitarras">
       <h2 class="section-title">Guitarras</h2>
-      <div class="articles">
+      <div class="productos">
         <article>
           <img src="https://images.unsplash.com/photo-1567166558371-d127faaff2aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="guitarra">
           <h3>Guitarra 1</h3>
@@ -73,7 +74,25 @@
     <section id="pedidos">
       <h2 class="section-title">Pedidos</h2>
       <form action="">
-
+        <div class="form-campo">
+          <label>Nombre</label>
+          <input type="text" placeholder="Nombre del cliente" required>
+        </div>
+        <div class="form-campo">
+          <label>Email</label>
+          <input type="email" placeholder="Correo electrónico" required>
+        </div>
+        <div class="form-campo">
+          <label>Producto</label>
+          <input type="text" placeholder="Nombre del producto" required>
+        </div>
+        <div class="form-campo">
+          <label>Descripción</label>
+          <textarea cols="30" rows="3" placeholder="Descripción del producto"></textarea>
+        </div>
+        <div class="form-campo">
+          <button type="submit">Enviar</button>
+        </div>
       </form>
     </section>
   </main>
