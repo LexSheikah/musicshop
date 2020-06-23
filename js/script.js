@@ -1,32 +1,42 @@
+// Declaración de variables
+
+
 // Obteniendo elementos HTML
 const txtNombre = document.getElementById('txtNombre')
 const txtEmail = document.getElementById('txtEmail')
 const txtProducto = document.getElementById('txtProducto')
 const txtDescripcion = document.getElementById('txtDescripcion')
 
-// Validación de campos vacíos
-txtNombre.oninput = () => {
+// Método para cambiar el color de los imput del formulario
+function activarColor (elemento) {
+  if(elemento.value === "") {
+    elemento.style.setProperty("border-color","red")
+  } else {
+    elemento.style.setProperty("border-color","")
+  }
+}
+
+// Validando form al escribir en los inputs
+txtNombre.oninput = () => activarColor(txtNombre)
+txtEmail.oninput = () => activarColor(txtEmail)
+txtProducto.oninput = () => activarColor(txtProducto)
+
+// Método para verificar si hay algún campo vacío
+function verificarForm () {
+  let formLleno = true
+
   if(txtNombre.value === "") {
-    txtNombre.style.setProperty("border-color","red")
-  } else {
-    txtNombre.style.setProperty("border-color","")
+    formLleno = false
+    activarColor(txtNombre)
+  } else if(txtEmail.value === "") {
+    formLleno = false
+    activarColor(txtEmail)
+  } else if(txtProducto.value === "") {
+    formLleno = false
+    activarColor(txtProducto)
   }
-}
 
-txtEmail.oninput = () => {
-  if(txtEmail.value === "") {
-    txtEmail.style.setProperty("border-color","red")
-  } else {
-    txtEmail.style.setProperty("border-color","")
-  }
-}
-
-txtProducto.oninput = () => {
-  if(txtProducto.value === "") {
-    txtProducto.style.setProperty("border-color","red")
-  } else {
-    txtProducto.style.setProperty("border-color","")
-  }
+  return formLleno // Retorna TRUE o FALSE
 }
 
 // Método para limpiar formulario
@@ -41,11 +51,11 @@ function limpiarFomulario () {
 function manejarEnvio (event) {
   // Prevenir el envío del formulario
   event.preventDefault()
-  // Obtener valores de los elementos HTML
-  let nombre = txtNombre.value
-  let producto = txtProducto.value
-  // Notificando al usuario su petición
-  alert(`${nombre}, su producto ${producto} ha sido solicitado`)
-  // Limpiando el formulario
-  limpiarFomulario()
+  // Verificar que el formulario esté lleno
+  if(verificarForm()){ // Si el método retorna TRUE
+    // Notificando al usuario su petición
+    alert(`${txtNombre.value}, su producto ${txtProducto.value} ha sido solicitado`)
+    // Limpiando el formulario
+    limpiarFomulario()
+  }
 }
