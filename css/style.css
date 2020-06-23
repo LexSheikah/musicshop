@@ -123,15 +123,26 @@ section {
   justify-content: space-between;
 }
 
+.marco {
+  display: flex;
+  overflow: hidden;
+}
+
 img {
   margin: 0;
   width: 280px;
+}
+
+img:hover{
+  transform: scale(1.2);
+  transition-duration: 0.8s;
 }
 
 article {
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+  cursor: pointer;
 }
 
 article h3 {
@@ -172,7 +183,7 @@ input, textarea {
   background-color: #EDF2F7;
   color: #121212;
   font-family: 'Open Sans', sans-serif;
-  border: 0.1px solid #12121210;
+  border: 0.2px solid #12121210;
   border-radius: 5px;
   resize:none;
 }
@@ -189,7 +200,9 @@ button {
 }
 
 input:focus, textarea:focus {
-  outline:none;
+  outline: none;
+  border: 0.2px solid #F4D1B5;
+
 }
 
 footer {
@@ -201,4 +214,14 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@keyframes zoomin {
+  from {
+    width:10%
+  }
+
+  to {
+    width:50%;
+  }
 }
