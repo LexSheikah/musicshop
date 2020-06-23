@@ -86,22 +86,22 @@
       <form action="">
         <div class="form-campo">
           <label>Nombre</label>
-          <input type="text" placeholder="Nombre del cliente" required>
+          <input type="text" id="txtNombre" placeholder="Nombre del cliente" required>
         </div>
         <div class="form-campo">
           <label>Email</label>
-          <input type="email" placeholder="Correo electrónico" required>
+          <input type="email" id="txtEmail" placeholder="Correo electrónico" required>
         </div>
         <div class="form-campo">
           <label>Producto</label>
-          <input type="text" placeholder="Nombre del producto" required>
+          <input type="text" id="txtProducto" placeholder="Nombre del producto" required>
         </div>
         <div class="form-campo">
           <label>Descripción</label>
-          <textarea cols="30" rows="3" placeholder="Descripción del producto"></textarea>
+          <textarea cols="30" rows="3" id="txtDescripcion" placeholder="Descripción del producto"></textarea>
         </div>
         <div class="form-campo">
-          <button type="submit">Enviar</button>
+          <button type="submit" id="btnEnviar" onclick="manejarEnvio(event)" >Enviar</button>
         </div>
       </form>
     </section>
