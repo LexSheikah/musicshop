@@ -20,6 +20,7 @@ function activarColor (elemento) {
 txtNombre.oninput = () => activarColor(txtNombre)
 txtEmail.oninput = () => activarColor(txtEmail)
 txtProducto.oninput = () => activarColor(txtProducto)
+txtDescripcion.oninput = () => activarColor(txtDescripcion)
 
 // Método para verificar si hay algún campo vacío
 function verificarForm () {
@@ -28,12 +29,18 @@ function verificarForm () {
   if(txtNombre.value === "") {
     formLleno = false
     activarColor(txtNombre)
-  } else if(txtEmail.value === "") {
+  }
+  if(txtEmail.value === "") {
     formLleno = false
     activarColor(txtEmail)
-  } else if(txtProducto.value === "") {
+  }
+  if(txtProducto.value === "") {
     formLleno = false
     activarColor(txtProducto)
+  }
+  if(txtDescripcion.value === "") {
+    formLleno = false
+    activarColor(txtDescripcion)
   }
 
   return formLleno // Retorna TRUE o FALSE
