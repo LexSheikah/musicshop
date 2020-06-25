@@ -1,13 +1,52 @@
-// Declaración de variables
-
-
 // Obteniendo elementos HTML
-const txtNombre = document.getElementById('txtNombre')
-const txtEmail = document.getElementById('txtEmail')
-const txtProducto = document.getElementById('txtProducto')
-const txtDescripcion = document.getElementById('txtDescripcion')
+const txtNombre = document.querySelector('#txtNombre')
+const txtEmail = document.querySelector('#txtEmail')
+const txtProducto = document.querySelector('#txtProducto')
+const txtDescripcion = document.querySelector('#txtDescripcion')
+const menuItems = document.querySelectorAll('.nav-menu-item')
+const sectionItems = document.querySelectorAll('section')
+const footer = document.querySelector('footer')
+const clog = console.log
 
-// Método para cambiar el color de los imput del formulario
+// Declaración de variables
+const offsetTopSection1 = sectionItems[0].offsetTop - 300
+const offsetTopSection2 = sectionItems[1].offsetTop - 300
+const offsetTopSection3 = sectionItems[2].offsetTop - 300
+
+// EventListener para saber cuando se hace Scroll
+window.addEventListener("scroll", () => {
+  //  Si el usuario está visualizando el inicio
+  if(scrollY >= 0 && scrollY < offsetTopSection1) {
+    eliminarClases()
+    menuItems[0].classList.add("nav-menu-item-active");
+  //  Si el usuario está visualizando los productos más vendidos
+} else if(scrollY >= offsetTopSection1 && scrollY < offsetTopSection2) {
+    eliminarClases()
+    menuItems[1].classList.add("nav-menu-item-active");
+    sectionItems[0].classList.add("section-in")
+  //  Si el usuario está visualizando las categorías
+} else if(scrollY >= offsetTopSection2 && scrollY < offsetTopSection3) {
+    eliminarClases()
+    menuItems[2].classList.add("nav-menu-item-active" );
+    sectionItems[1].classList.add("section-in")
+  //  Si el usuario está visualizando el formulario para pedidos
+} else if(scrollY >= offsetTopSection3) {
+    eliminarClases()
+    menuItems[3].classList.add("nav-menu-item-active" );
+    sectionItems[2].classList.add("section-in")
+  }
+})
+
+// Método para eliminar clases CSS de los elementos no visibles
+function eliminarClases() {
+  // Eliminando los active de los items del menú
+  menuItems.forEach( menuItem => {
+    // Si el elemento contiene la clase, entonces se remueve
+    if(menuItem.classList.contains("nav-menu-item-active")) menuItem.classList.remove("nav-menu-item-active")
+  })
+}
+
+// Método para cambiar el color de los input del formulario
 function activarColor (elemento) {
   if(elemento.value === "") {
     elemento.style.setProperty("border-color","red")

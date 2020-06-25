@@ -12,7 +12,6 @@
 body {
   margin: 0;
   padding: 0;
-  /* background-color: #F0E9E4; */
   background-image: linear-gradient(to bottom right, #F4D1B5,#F0E9E4);
   font-family: 'Open Sans', sans-serif;
   color: #121212;
@@ -21,8 +20,6 @@ body {
 header {
   height: 100vh;
   background-image: url(https://images.unsplash.com/photo-1502773860571-211a597d6e4b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
-  /* background-image: url(https://images.unsplash.com/photo-1508186736123-44a5fcb36f9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80); */
-  /* background-image: url(https://images.unsplash.com/photo-1587731556938-38755b4803a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1514&q=80); */
   background-size: cover;
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
 
@@ -73,6 +70,11 @@ nav {
   border-bottom: solid 2px #F4D1B5;
 }
 
+.nav-menu-item-active {
+  color: #F4D1B5;
+  border-bottom: solid 2px #F4D1B5;
+}
+
 #header-banner {
   height: 100%;
   width: 100%;
@@ -112,16 +114,15 @@ main {
 }
 
 section {
-  /* position: relative;
-  left: -75vw;
-  opacity: 5%; */
+  opacity: 0%;
 }
 
-/* section:hover {
-  opacity: 100%;
-  transform: translate(75vw);
-  transition-duration: 0.8s;
-} */
+.section-in {
+  position: relative;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
 
 .section-title {
   margin: 0;
@@ -267,4 +268,16 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* ANIMACIONES */
+@keyframes fade-in {
+  0% {
+    left: -75vw;
+    opacity: 0%;
+  }
+  100% {
+    left: 0;
+    opacity: 100%;
+  }
 }
