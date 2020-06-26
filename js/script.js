@@ -88,14 +88,17 @@ function verificarForm () {
 
 // Método para mostrar msj
 function mostrarMsg() {
+  // Si la el elemento es invisible, se poner visible
   if(msgBox.classList.contains('invisible')) msgBox.classList.remove('invisible')
+  // Agregar el texto de la caja del msj
   msgBox.innerHTML = `${txtNombre.value}, su producto ${txtProducto.value} ha sido solicitado`
+  // Desplegando la animación para el msj
   msgBox.classList.add('form-msg-popup')
-
+  // Creando un setTimeout para la duración del msj
   setTimeout( () => {
-    msgBox.classList.add('invisible')
-    msgBox.classList.remove('form-msg-popup')
-  }, 5000);
+    msgBox.classList.add('invisible') // Volviendo invisible el elemento
+    msgBox.classList.remove('form-msg-popup') //Removiendo la animación del elemento
+  }, 5000); // Estableciendo el tiempo del setTimeout
 }
 
 // Método para limpiar formulario
