@@ -5,6 +5,7 @@ const txtProducto = document.querySelector('#txtProducto')
 const txtDescripcion = document.querySelector('#txtDescripcion')
 const menuItems = document.querySelectorAll('.nav-menu-item')
 const sectionItems = document.querySelectorAll('section')
+const msgBox = document.querySelector('#form-msg')
 const footer = document.querySelector('footer')
 const clog = console.log
 
@@ -85,6 +86,18 @@ function verificarForm () {
   return formLleno // Retorna TRUE o FALSE
 }
 
+// Método para mostrar msj
+function mostrarMsg() {
+  if(msgBox.classList.contains('invisible')) msgBox.classList.remove('invisible')
+  msgBox.innerHTML = `${txtNombre.value}, su producto ${txtProducto.value} ha sido solicitado`
+  msgBox.classList.add('form-msg-popup')
+
+  setTimeout( () => {
+    msgBox.classList.add('invisible')
+    msgBox.classList.remove('form-msg-popup')
+  }, 5000);
+}
+
 // Método para limpiar formulario
 function limpiarFomulario () {
   txtNombre.value = ""
@@ -100,7 +113,7 @@ function manejarEnvio (event) {
   // Verificar que el formulario esté lleno
   if(verificarForm()){ // Si el método retorna TRUE
     // Notificando al usuario su petición
-    alert(`${txtNombre.value}, su producto ${txtProducto.value} ha sido solicitado`)
+    mostrarMsg()
     // Limpiando el formulario
     limpiarFomulario()
   }

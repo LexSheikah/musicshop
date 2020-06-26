@@ -259,6 +259,22 @@ button:active {
   transform: scale(0.98);
 }
 
+.form-msg-popup {
+  position: fixed;
+  right: 20px;
+  top: 80px;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: #F4D1B5;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  border-radius: 5px;
+  animation: pop-up 5s forwards;
+}
+
+.invisible {
+  display: none;
+}
+
 footer {
   margin: 0;
   height: 50px;
@@ -279,5 +295,20 @@ footer {
   100% {
     left: 0;
     opacity: 100%;
+  }
+}
+
+@keyframes pop-up {
+  0% {
+    opacity: 0%;
+  }
+  20% {
+    opacity: 100%;
+  }
+  80% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
   }
 }
